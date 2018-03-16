@@ -14,7 +14,9 @@
     "jsonwebtoken": "^8.2.0",
     "md5": "^2.2.1",
     "mongoose": "^5.0.9",
+    "node-youtube-resumable-upload": "^0.2.1",
     "tap-spec": "^4.1.1",
-    "tape": "^4.9.0"
+    "tape": "^4.9.0",
+    "youtube-video-api": "^0.3.7"
   }
 }
