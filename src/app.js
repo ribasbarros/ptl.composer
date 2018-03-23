@@ -17,7 +17,7 @@ const Upload = require('./upload/upload-model');
 // Carrega as Rotas
 const customerRoute = require('./customer/customer-route');
 //const paymentRoute = require('./payment/payment-route');
-//const uploadRoute = require('./upload/upload-route');
+const uploadRoute = require('./upload/upload-route');
 
 app.use(bodyParser.json({
     limit: '5mb'
@@ -37,6 +37,6 @@ app.use(function (req, res, next) {
 
 // app.use('/payments', paymentRoute);
 app.use('/customers', customerRoute);
-// app.use('/uploads', uploadRoute);
+app.use('/uploads', uploadRoute);
 
 module.exports = app;
