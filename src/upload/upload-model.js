@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const schema = new Schema({
-    customer: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Customer'
-    },
+const schema = new Schema({    
     url: {
         type: String,
         required: true
+    },
+    customer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Customer'
     },
     createDate: {
         type: Date,
@@ -17,6 +17,10 @@ const schema = new Schema({
     },
     updateDate: {
         type: Date
+    },
+    updateBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Customer'
     },
     status: {
         type: String,

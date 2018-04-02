@@ -1,20 +1,23 @@
 const mongoose = require('mongoose');
-const Customer = mongoose.model('Customer');
+const Upload = mongoose.model('Upload');
 
 exports.create = async(data) => {
-    var customer = new Customer(data);
-    await customer.save();
-}
-
-exports.authenticate = async(data) => {
-    const res = await Customer.findOne({
-        email: data.email,
-        password: data.password
-    });
-    return res;
+    var upload = new Upload(data);
+    await upload.save();
 }
 
 exports.getById = async(id) => {
-    const res = await Customer.findById(id);
+    const res = await Upload.findById(id);
     return res;
+}
+
+exports.update = async(id, data) => {
+    await Upload
+        .findByIdAndUpdate(id, {
+            $set: {
+                status: data.status,
+                updateDate: data.updateDate,
+                updateBy: data.updateBy
+            }
+        });
 }
